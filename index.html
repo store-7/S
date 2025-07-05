@@ -1,0 +1,112 @@
+<header style="background: linear-gradient(to right, #FF8C00, #FFA500); padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 1000;">
+  <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1 style="color: white; text-shadow: 0 0 10px rgba(255,255,255,0.7); animation: glow 2s infinite alternate;">WIKI SHOP</h1>
+    <button id="menuBtn" style="background: #FFA500; border: none; padding: 0.5rem; border-radius: 4px;">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</header>
+<section class="banner" style="margin-top: 80px; height: 300px; display: flex; justify-content: center; align-items: center; background: url('banner-bg.jpg') center/cover;">
+  <h2 style="font-size: 2.5rem; font-weight: bold; color: #FFA500; text-align: center; animation: fadeIn 2s;">أهلاً بيك في أكبر سوق لبيع الحسابات</h2>
+</section>
+<section class="accounts" style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
+  <!-- حساب 1 -->
+  <div class="account-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
+    <img src="account1.jpg" alt="حساب 1" style="width: 100%; height: 200px; object-fit: cover;">
+    <div class="account-details" style="padding: 1rem;">
+      <p><strong>نوع الربط:</strong> فيسبوك</p>
+      <p><strong>لفل الحساب:</strong> 70</p>
+      <p><strong>النوادر:</strong> 5 عناصر نادرة</p>
+      <p><strong>الصدريات:</strong> 10 أنواع</p>
+      <p><strong>البنطلون:</strong> 8 أنواع</p>
+      <p><strong>عدد الرقصات:</strong> 15</p>
+      <p><strong>عدد الأسلحة الايفو:</strong> 7</p>
+      <p><strong>عدد الأسلحة الماكس:</strong> 3</p>
+      <p><strong>عدد مراكب النزول:</strong> 2</p>
+      <p><strong>عدد رقصات الدخول:</strong> 5</p>
+      <p><strong>سعر الحساب:</strong> 100 دولار</p>
+      <p><strong>وسيط:</strong> نعم</p>
+      <p><strong>رقم التواصل واتساب:</strong> +249XXXXXXXXX</p>
+      <button class="contact-btn" style="background: #FFA500; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; margin-top: 1rem; cursor: pointer; transition: background 0.3s;">تواصل الآن</button>
+    </div>
+  </div>
+  
+  <!-- حساب 2 و 3 بنفس الهيكل -->
+</section>
+<aside id="sidebar" style="position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background: white; box-shadow: -2px 0 10px rgba(0,0,0,0.1); transition: right 0.3s; z-index: 1001; padding-top: 80px;">
+  <ul style="list-style: none; padding: 0;">
+    <li style="padding: 1rem; border-bottom: 1px solid #eee;"><a href="#learn" style="color: #FF8C00; text-decoration: none;">اتعلّم</a></li>
+  </ul>
+</aside>
+<section id="learn" style="padding: 2rem; max-width: 800px; margin: 0 auto; display: none;">
+  <h2 style="color: #FF8C00; margin-bottom: 1rem;">كيفية شراء حساب من WIKI SHOP</h2>
+  <ol style="line-height: 2; color: #333;">
+    <li>تختار الحساب اللي يعجبك من قسم الحسابات.</li>
+    <li>تتأكد من مواصفات الحساب المعروضة تحت الصورة.</li>
+    <li>تتواصل معنا عبر واتساب على الرقم الموضح.</li>
+    <li>يتم الاتفاق على السعر وطريقة الدفع.</li>
+    <li>بعد الدفع يتم إرسال الحساب لك بشكل آمن.</li>
+    <li>في حال وجود وسيط يتم الاتفاق عليه مسبقاً لضمان الحقوق.</li>
+  </ol>
+</section>
+/* تأثير التوهج للهيدر */
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(255,255,255,0.7); }
+  to { text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,0.7); }
+}
+
+/* تأثيرات الظهور */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* تأثيرات العناصر */
+.account-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.contact-btn:hover {
+  background: #FF8C00;
+}
+// مؤثرات صوتية
+const buttonSound = new Audio('button-click.mp3');
+const menuSound = new Audio('menu-open.mp3');
+
+document.querySelectorAll('button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    buttonSound.play();
+  });
+});
+
+document.getElementById('menuBtn').addEventListener('click', () => {
+  menuSound.play();
+  const sidebar = document.getElementById('sidebar');
+  sidebar.style.right = sidebar.style.right === '0px' ? '-300px' : '0px';
+});
+// تفعيل الحركات عند الظهور
+window.addEventListener('scroll', () => {
+  document.querySelectorAll('.account-card').forEach((card, index) => {
+    const cardPosition = card.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight / 1.3;
+    
+    if(cardPosition < screenPosition) {
+      card.style.animation = `slideUp 0.5s ease forwards ${index * 0.1}s`;
+    }
+  });
+});
