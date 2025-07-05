@@ -1,112 +1,487 @@
-<header style="background: linear-gradient(to right, #FF8C00, #FFA500); padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 1000;">
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-    <h1 style="color: white; text-shadow: 0 0 10px rgba(255,255,255,0.7); animation: glow 2s infinite alternate;">WIKI SHOP</h1>
-    <button id="menuBtn" style="background: #FFA500; border: none; padding: 0.5rem; border-radius: 4px;">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
-        <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
-  </div>
-</header>
-<section class="banner" style="margin-top: 80px; height: 300px; display: flex; justify-content: center; align-items: center; background: url('banner-bg.jpg') center/cover;">
-  <h2 style="font-size: 2.5rem; font-weight: bold; color: #FFA500; text-align: center; animation: fadeIn 2s;">أهلاً بيك في أكبر سوق لبيع الحسابات</h2>
-</section>
-<section class="accounts" style="padding: 2rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;">
-  <!-- حساب 1 -->
-  <div class="account-card" style="background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s;">
-    <img src="account1.jpg" alt="حساب 1" style="width: 100%; height: 200px; object-fit: cover;">
-    <div class="account-details" style="padding: 1rem;">
-      <p><strong>نوع الربط:</strong> فيسبوك</p>
-      <p><strong>لفل الحساب:</strong> 70</p>
-      <p><strong>النوادر:</strong> 5 عناصر نادرة</p>
-      <p><strong>الصدريات:</strong> 10 أنواع</p>
-      <p><strong>البنطلون:</strong> 8 أنواع</p>
-      <p><strong>عدد الرقصات:</strong> 15</p>
-      <p><strong>عدد الأسلحة الايفو:</strong> 7</p>
-      <p><strong>عدد الأسلحة الماكس:</strong> 3</p>
-      <p><strong>عدد مراكب النزول:</strong> 2</p>
-      <p><strong>عدد رقصات الدخول:</strong> 5</p>
-      <p><strong>سعر الحساب:</strong> 100 دولار</p>
-      <p><strong>وسيط:</strong> نعم</p>
-      <p><strong>رقم التواصل واتساب:</strong> +249XXXXXXXXX</p>
-      <button class="contact-btn" style="background: #FFA500; color: white; border: none; padding: 0.5rem 1rem; border-radius: 4px; margin-top: 1rem; cursor: pointer; transition: background 0.3s;">تواصل الآن</button>
-    </div>
-  </div>
-  
-  <!-- حساب 2 و 3 بنفس الهيكل -->
-</section>
-<aside id="sidebar" style="position: fixed; top: 0; right: -300px; width: 300px; height: 100%; background: white; box-shadow: -2px 0 10px rgba(0,0,0,0.1); transition: right 0.3s; z-index: 1001; padding-top: 80px;">
-  <ul style="list-style: none; padding: 0;">
-    <li style="padding: 1rem; border-bottom: 1px solid #eee;"><a href="#learn" style="color: #FF8C00; text-decoration: none;">اتعلّم</a></li>
-  </ul>
-</aside>
-<section id="learn" style="padding: 2rem; max-width: 800px; margin: 0 auto; display: none;">
-  <h2 style="color: #FF8C00; margin-bottom: 1rem;">كيفية شراء حساب من WIKI SHOP</h2>
-  <ol style="line-height: 2; color: #333;">
-    <li>تختار الحساب اللي يعجبك من قسم الحسابات.</li>
-    <li>تتأكد من مواصفات الحساب المعروضة تحت الصورة.</li>
-    <li>تتواصل معنا عبر واتساب على الرقم الموضح.</li>
-    <li>يتم الاتفاق على السعر وطريقة الدفع.</li>
-    <li>بعد الدفع يتم إرسال الحساب لك بشكل آمن.</li>
-    <li>في حال وجود وسيط يتم الاتفاق عليه مسبقاً لضمان الحقوق.</li>
-  </ol>
-</section>
-/* تأثير التوهج للهيدر */
-@keyframes glow {
-  from { text-shadow: 0 0 10px rgba(255,255,255,0.7); }
-  to { text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,0.7); }
-}
-
-/* تأثيرات الظهور */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
-  from { transform: translateY(20px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-@keyframes zoomIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-/* تأثيرات العناصر */
-.account-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-
-.contact-btn:hover {
-  background: #FF8C00;
-}
-// مؤثرات صوتية
-const buttonSound = new Audio('button-click.mp3');
-const menuSound = new Audio('menu-open.mp3');
-
-document.querySelectorAll('button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    buttonSound.play();
-  });
-});
-
-document.getElementById('menuBtn').addEventListener('click', () => {
-  menuSound.play();
-  const sidebar = document.getElementById('sidebar');
-  sidebar.style.right = sidebar.style.right === '0px' ? '-300px' : '0px';
-});
-// تفعيل الحركات عند الظهور
-window.addEventListener('scroll', () => {
-  document.querySelectorAll('.account-card').forEach((card, index) => {
-    const cardPosition = card.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight / 1.3;
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WIKI SHOP - سوق بيع الحسابات</title>
+    <style>
+        /* Reset وتنسيقات عامة */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #FFFFFF;
+            color: #000000;
+            padding-top: 70px;
+        }
+        
+        /* تأثير التوهج للهيدر */
+        @keyframes glow {
+            from { text-shadow: 0 0 10px rgba(255,255,255,0.7); }
+            to { text-shadow: 0 0 20px rgba(255,255,255,1), 0 0 30px rgba(255,255,255,0.7); }
+        }
+        
+        /* تأثيرات الظهور */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        /* الهيدر */
+        header {
+            background: linear-gradient(to right, #FF8C00, #FFA500);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            color: white;
+            text-shadow: 0 0 10px rgba(255,255,255,0.7);
+            animation: glow 2s infinite alternate;
+            font-size: 1.5rem;
+        }
+        
+        .menu-btn {
+            background: #FFA500;
+            border: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* البانر الترحيبي */
+        .banner {
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1920x500') center/cover;
+            color: white;
+            text-align: center;
+            padding: 0 1rem;
+            animation: fadeIn 2s;
+        }
+        
+        .banner h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFA500;
+        }
+        
+        /* قسم الحسابات */
+        .accounts-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .accounts-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #FF8C00;
+            font-size: 1.8rem;
+        }
+        
+        .accounts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .account-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: slideUp 0.5s ease forwards;
+            opacity: 0;
+        }
+        
+        .account-card:nth-child(1) { animation-delay: 0.1s; }
+        .account-card:nth-child(2) { animation-delay: 0.2s; }
+        .account-card:nth-child(3) { animation-delay: 0.3s; }
+        
+        .account-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .account-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 2px solid #FFA500;
+        }
+        
+        .account-details {
+            padding: 1rem;
+        }
+        
+        .account-details p {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+        
+        .account-details strong {
+            color: #FF8C00;
+        }
+        
+        .contact-btn {
+            background: #FFA500;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            margin-top: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            font-weight: bold;
+        }
+        
+        .contact-btn:hover {
+            background: #FF8C00;
+        }
+        
+        /* القائمة الجانبية */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 100%;
+            max-width: 300px;
+            height: 100%;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s;
+            z-index: 1001;
+            padding-top: 80px;
+        }
+        
+        .sidebar.open {
+            right: 0;
+        }
+        
+        .sidebar-menu {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .sidebar-menu li {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sidebar-menu a {
+            color: #FF8C00;
+            text-decoration: none;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            display: none;
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* صفحة اتعلّم */
+        .learn-section {
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            display: none;
+        }
+        
+        .learn-section h2 {
+            color: #FF8C00;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        
+        .learn-section ol {
+            line-height: 2;
+            color: #333;
+            padding-right: 1rem;
+        }
+        
+        .learn-section li {
+            margin-bottom: 1rem;
+        }
+        
+        /* فوتر */
+        footer {
+            background: #FF8C00;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        
+        /* تجاوبية */
+        @media (max-width: 768px) {
+            .banner h2 {
+                font-size: 1.5rem;
+            }
+            
+            .accounts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .sidebar {
+                width: 80%;
+                max-width: none;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.2rem;
+            }
+            
+            .banner {
+                height: 200px;
+            }
+            
+            .banner h2 {
+                font-size: 1.2rem;
+            }
+            
+            .accounts-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <header>
+        <div class="header-content">
+            <h1 class="logo">WIKI SHOP</h1>
+            <button class="menu-btn" id="menuBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 12H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M3 6H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M3 18H21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
     
-    if(cardPosition < screenPosition) {
-      card.style.animation = `slideUp 0.5s ease forwards ${index * 0.1}s`;
-    }
-  });
-});
+    <!-- بانر الترحيب -->
+    <section class="banner">
+        <h2>أهلاً بيك في أكبر سوق لبيع الحسابات</h2>
+    </section>
+    
+    <!-- قسم الحسابات -->
+    <div class="accounts-container">
+        <h2 class="accounts-title">الحسابات المتاحة</h2>
+        
+        <div class="accounts-grid">
+            <!-- حساب 1 -->
+            <div class="account-card">
+                <img src="1000268029.jpg" alt="حساب 1" class="account-image">
+                <div class="account-details">
+                    <p><strong>نوع الربط:</strong> فيسبوك</p>
+                    <p><strong>لفل الحساب:</strong> 70</p>
+                    <p><strong>النوادر:</strong> 5 عناصر نادرة</p>
+                    <p><strong>الصدريات:</strong> 10 أنواع</p>
+                    <p><strong>البنطلون:</strong> 8 أنواع</p>
+                    <p><strong>عدد الرقصات:</strong> 15</p>
+                    <p><strong>عدد الأسلحة الايفو:</strong> 7</p>
+                    <p><strong>عدد الأسلحة الماكس:</strong> 3</p>
+                    <p><strong>عدد مراكب النزول:</strong> 2</p>
+                    <p><strong>عدد رقصات الدخول:</strong> 5</p>
+                    <p><strong>سعر الحساب:</strong> 100 دولار</p>
+                    <p><strong>وسيط:</strong> نعم</p>
+                    <p><strong>رقم التواصل واتساب:</strong> +249XXXXXXXXX</p>
+                    <button class="contact-btn">تواصل الآن</button>
+                </div>
+            </div>
+            
+            <!-- حساب 2 -->
+            <div class="account-card">
+                <img src="1000268029.jpg" alt="حساب 2" class="account-image">
+                <div class="account-details">
+                    <p><strong>نوع الربط:</strong> VK</p>
+                    <p><strong>لفل الحساب:</strong> 65</p>
+                    <p><strong>النوادر:</strong> 3 عناصر نادرة</p>
+                    <p><strong>الصدريات:</strong> 8 أنواع</p>
+                    <p><strong>البنطلون:</strong> 6 أنواع</p>
+                    <p><strong>عدد الرقصات:</strong> 12</p>
+                    <p><strong>عدد الأسلحة الايفو:</strong> 5</p>
+                    <p><strong>عدد الأسلحة الماكس:</strong> 2</p>
+                    <p><strong>عدد مراكب النزول:</strong> 1</p>
+                    <p><strong>عدد رقصات الدخول:</strong> 3</p>
+                    <p><strong>سعر الحساب:</strong> 80 دولار</p>
+                    <p><strong>وسيط:</strong> لا</p>
+                    <p><strong>رقم التواصل واتساب:</strong> +249XXXXXXXXX</p>
+                    <button class="contact-btn">تواصل الآن</button>
+                </div>
+            </div>
+            
+            <!-- حساب 3 -->
+            <div class="account-card">
+                <img src="1000268029.jpg" alt="حساب 3" class="account-image">
+                <div class="account-details">
+                    <p><strong>نوع الربط:</strong> جيميل</p>
+                    <p><strong>لفل الحساب:</strong> 80</p>
+                    <p><strong>النوادر:</strong> 7 عناصر نادرة</p>
+                    <p><strong>الصدريات:</strong> 12 أنواع</p>
+                    <p><strong>البنطلون:</strong> 10 أنواع</p>
+                    <p><strong>عدد الرقصات:</strong> 18</p>
+                    <p><strong>عدد الأسلحة الايفو:</strong> 9</p>
+                    <p><strong>عدد الأسلحة الماكس:</strong> 4</p>
+                    <p><strong>عدد مراكب النزول:</strong> 3</p>
+                    <p><strong>عدد رقصات الدخول:</strong> 7</p>
+                    <p><strong>سعر الحساب:</strong> 150 دولار</p>
+                    <p><strong>وسيط:</strong> نعم</p>
+                    <p><strong>رقم التواصل واتساب:</strong> +249XXXXXXXXX</p>
+                    <button class="contact-btn">تواصل الآن</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- القائمة الجانبية -->
+    <div class="overlay" id="overlay"></div>
+    <aside class="sidebar" id="sidebar">
+        <ul class="sidebar-menu">
+            <li><a href="#" id="learnLink">اتعلّم</a></li>
+        </ul>
+    </aside>
+    
+    <!-- صفحة اتعلّم -->
+    <section class="learn-section" id="learnSection">
+        <h2>كيفية شراء حساب من WIKI SHOP</h2>
+        <ol>
+            <li>تختار الحساب اللي يعجبك من قسم الحسابات.</li>
+            <li>تتأكد من مواصفات الحساب المعروضة تحت الصورة.</li>
+            <li>تتواصل معنا عبر واتساب على الرقم الموضح.</li>
+            <li>يتم الاتفاق على السعر وطريقة الدفع.</li>
+            <li>بعد الدفع يتم إرسال الحساب لك بشكل آمن.</li>
+            <li>في حال وجود وسيط يتم الاتفاق عليه مسبقاً لضمان الحقوق.</li>
+        </ol>
+    </section>
+    
+    <!-- الفوتر -->
+    <footer>
+        <p>© 2023 WIKI SHOP - جميع الحقوق محفوظة</p>
+    </footer>
+    
+    <script>
+        // التحكم في القائمة الجانبية
+        const menuBtn = document.getElementById('menuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('overlay');
+        const learnLink = document.getElementById('learnLink');
+        const learnSection = document.getElementById('learnSection');
+        
+        menuBtn.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+            playSound('menu');
+        });
+        
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            playSound('menu');
+        });
+        
+        learnLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            sidebar.classList.remove('open');
+            overlay.classList.remove('active');
+            learnSection.style.display = 'block';
+            window.scrollTo({
+                top: learnSection.offsetTop,
+                behavior: 'smooth'
+            });
+            playSound('click');
+        });
+        
+        // مؤثرات صوتية
+        function playSound(type) {
+            if(type === 'click') {
+                // يمكنك إضافة صوت للنقر هنا
+                console.log('Click sound played');
+            } else if(type === 'menu') {
+                // يمكنك إضافة صوت للقائمة هنا
+                console.log('Menu sound played');
+            }
+        }
+        
+        // تفعيل تأثيرات الظهور عند التمرير
+        const accountCards = document.querySelectorAll('.account-card');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        accountCards.forEach(card => {
+            observer.observe(card);
+        });
+        
+        // تأثيرات الأزرار
+        const buttons = document.querySelectorAll('button');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', () => {
+                playSound('click');
+            });
+            
+            button.addEventListener('mouseenter', () => {
+                button.style.transform = 'scale(1.05)';
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                button.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+  </html>
